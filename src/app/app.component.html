@@ -3,6 +3,7 @@
 
 <ul>
     <li class="text" *ngFor="let chat of chats | async">
-        {{chat.mensaje}}
+        <!--{{chat.mensaje}}-->
+        {{chat|json}}
     </li>
 </ul>
