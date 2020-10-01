@@ -13,9 +13,7 @@ export class ChatComponent  {
 
   constructor(public chatService:ChatService) {
 
-    this.chatService.cargarMensajes().subscribe((mensajes:any[])=>{
-      console.log(mensajes);
-    });
+    this.chatService.cargarMensajes().subscribe();
    }
 
   enviarMensaje(){
