@@ -31,4 +31,21 @@ export class ChatService {
 
   }
 
+
+  agregarMensaje(texto:String){
+
+    //TODO falta el UID del usuario
+    let mensaje:Mensaje={
+
+      nombre:'Demo',
+      mensaje:texto,
+      fecha:new Date().getTime(),
+
+    }
+
+    return this.itemsCollection.add(mensaje);
+
+  }
+
+
 }
