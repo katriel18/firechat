@@ -11,10 +11,12 @@ import { Observable } from 'rxjs';
 export class AppComponent {
 
   //title = 'firechat';
-
+  
+/*
   chats: Observable<any[]>;
   constructor(firestore: AngularFirestore) {
     this.chats = firestore.collection('chats').valueChanges();
   }
+*/
 
 }
