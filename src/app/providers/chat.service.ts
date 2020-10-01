@@ -16,9 +16,7 @@ export class ChatService {
   private itemsCollection: AngularFirestoreCollection<Mensaje>;
 
   public chats:Mensaje[]=[];
-  public usuario:any={
-
-  };
+  public usuario:any={};
   
   constructor(private afs: AngularFirestore,public auth: AngularFireAuth) { 
 
@@ -32,10 +30,21 @@ export class ChatService {
     });
   }
 
+  //http://fernando-herrera.com/
+
   login(proveedor:String) {
-    this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+
+    if(proveedor=='google'){
+      this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    }else{
+      this.auth.signInWithPopup(new auth.FacebookAuthProvider());
+    }
+
+    
   }
+
   logout() {
+    this.usuario={};
     this.auth.signOut();
   }
 
